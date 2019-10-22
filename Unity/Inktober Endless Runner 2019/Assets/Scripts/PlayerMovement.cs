@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Text healthDisplay;
 
+    public GameObject gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
         //Check health
         if (health <= 0)
         {
-            SceneManager.LoadScene("Game");
+            gameOver.SetActive(true);
+            Destroy(gameObject);
         }
 
         //Display Health
